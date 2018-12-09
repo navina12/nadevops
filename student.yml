@@ -1,0 +1,30 @@
+---
+Students: 
+  - name: naveena
+    phno: 78978798
+    adress: 
+      dno: 7
+      sno: 78
+      pin :
+        pin1: 89798
+        pin2: 456123 
+
+  - name: shravya
+    phono: 78998798
+    email: shravya@gmail.com
+    address: sdfsd
+
+empdetails: 
+ - name: nkg
+   phno: 5456465
+   
+ - dgk
+ - jdlkg
+
+    
+
+  
+
+
+
+  

@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: YES
+  tasks:
+  - name: name of th tasks
+    apt:
+      name: git
+      state: present
+
