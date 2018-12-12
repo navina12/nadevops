@@ -1,17 +1,17 @@
 ---
-  - hosts:
+  - hosts: all
     become: yes
     tasks:
     - name: install ubuntu(apache2)
       apt:
-        name: apache2
+        name: apache2 
         state: present
-    when: ansible_os_family == "Debian"
-  - name: service on webserver
-    service:
+      when: ansible_os_family == "Debian"
+    - name: service on webserver
+      service:
         name: apache2
         state: started
-         
+      when: ansible_os_family =="Debian"   
 
         
        
