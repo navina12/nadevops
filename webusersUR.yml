@@ -1,22 +1,37 @@
 ---
-  - hosts: all
+  - hosts: webservers
     become: yes
     tasks:
     - name: install ubuntu(apache2)
       apt:
         name: apache2
         state: present
-    when: ansible_os_family == "Debian"
-     
+      when: ansible_os_family == "Debian"
+    - name: service on webserver
+      service:
+        name: apache2
+        state: started
+      when: ansible_os_family == "Debian"
+
 ---
-  - hosts: all
+  - hosts: webservers
     become: yes
-    tasks: 
-    - name: install Redhat(httpd)
+    tasks:
+    - name: install redhat(httpd)
       yum:
         name: httpd
         state: present
-    when: ansible_os_family == "RedHat"    
+      when: ansible_os_family == "redhat"
+    - name: service on webserver
+      service:
+        name: httpd
+        state: started
+      when: ansible_os_family == "redhat"
+    
+      
+        
+        
+       
          
     
 
