@@ -13,10 +13,10 @@
         state: started
       when: ansible_os_family == "Debian"
 
----
-  - hosts: webservers
-    become: yes
-    tasks:
+
+  
+    
+    
     - name: install redhat(httpd)
       yum:
         name: httpd
