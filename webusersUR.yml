@@ -17,16 +17,16 @@
   
     
     
-    - name: install redhat"{{webserveronredhat}}"
+    - name: install redhat "{{webserveronRedHat}}"
       yum:
-        name: "{{webserveronRedHat}}"
+        name: "{{ webserveronRedHat}}"
         state: present
       when: ansible_os_family == "RedHat"
     - name: service on webserver
       service:
         name:
         state: started
-      when: ansible_os_family == "redhat"
+      when: ansible_os_family == "RedHat"
     
       
         
