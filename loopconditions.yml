@@ -1,5 +1,5 @@
 ---
- - hosts: all
+ - hosts: webservers
    become: yes
    tasks:
    - name: install git, tree and wget on ubuntu
