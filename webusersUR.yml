@@ -2,14 +2,14 @@
   - hosts: webservers
     become: yes
     tasks:
-    - name: install ubuntu(apache2)
+    - name: install ubuntu"{{webserveronubuntu}}"
       apt:
-        name: apache2
+        name: "{{webserveronubuntu}}"
         state: present
       when: ansible_os_family == "Debian"
     - name: service on webserver
       service:
-        name: apache2
+        name: "{{webserveronubuntu}}"
         state: started
       when: ansible_os_family == "Debian"
 
@@ -17,14 +17,14 @@
   
     
     
-    - name: install redhat(httpd)
+    - name: install redhat"{{webserveronredhat}}"
       yum:
-        name: httpd
+        name: "{{webserveronRedHat}}"
         state: present
-      when: ansible_os_family == "redhat"
+      when: ansible_os_family == "RedHat"
     - name: service on webserver
       service:
-        name: httpd
+        name:
         state: started
       when: ansible_os_family == "redhat"
     
